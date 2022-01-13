@@ -16,7 +16,15 @@ struct SecondScreen: View {
     
     private var content: some View {
         VStack {
+            Button {
+                ThirdScreenRouter.open(id: "123")
+            } label: {
+                Text("Third Screen")
+                    .padding()
+            }
             Text("Data: \(text)")
+            
+            Spacer()
         }
         .padding()
     }
@@ -34,13 +42,5 @@ extension SecondScreen {
         default:
             break
         }
-    }
-}
-
-// MARK: open
-extension SecondScreen {
-    
-    static func open(id: String) {
-        UINavigationController.openView(SecondScreen(id: id), title: "Second Screen")
     }
 }

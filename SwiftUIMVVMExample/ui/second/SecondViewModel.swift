@@ -13,7 +13,14 @@ class SecondViewModel: BaseViewModel, ObservableObject {
     
     func loadTestData() {
         task { [weak self] in
-            self?.testData = await self?.getTestDataUseCase.invoke()
+//            self?.testData = await self?.getTestDataUseCase.invoke()
+            let source = await self?.getTestDataUseCase.invoke()
+            logget(source)
+            self?.testData = source
         }
+    }
+    
+    deinit {
+        logget("deinit")
     }
 }

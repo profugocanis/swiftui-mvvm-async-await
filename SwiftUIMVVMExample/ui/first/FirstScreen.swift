@@ -16,7 +16,7 @@ struct FirstScreen: View {
     private var content: some View {
         VStack {
             Button {
-                SecondScreen.open(id: "123")
+                SecondScreenRouter.open(id: "123")
             } label: {
                 Text("Second Screen")
                     .padding()

@@ -10,7 +10,6 @@ class BaseViewModel {
             await operation()
         }
         tasks.append(t)
-        
     }
     
     func onCanceled() {
