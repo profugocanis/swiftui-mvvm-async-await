@@ -15,29 +15,23 @@ class AppComponent {
     }
     
     private static func setupData() {
-        container.register(RestManager.self) { _ in
-            RestManager()
-        }.inObjectScope(.container)
+        singelton { _ in RestManager() }
     }
     
     private static func setupUseCase() {
-        container.register(GetAlbumUseCase.self) { r in
-            GetAlbumUseCase(restManager: r.resolve(RestManager.self)!)
-        }
-        container.register(GetTestDataUseCase.self) { r in
-            GetTestDataUseCase(restManager: r.resolve(RestManager.self)!)
-        }
+        factory { GetAlbumUseCase(restManager: $0.get()!) }
+        factory { GetTestDataUseCase(restManager: $0.get()!) }
     }
     
     private static func setupViewModels() {
-        container.register(FirstViewModel.self) { r in
+        factory {
             FirstViewModel(
-                getAlbumUseCase: r.resolve(GetAlbumUseCase.self)!
+                getAlbumUseCase: $0.get()!
             )
         }
-        container.register(SecondViewModel.self) { r in
+        factory {
             SecondViewModel(
-                getTestDataUseCase: r.resolve(GetTestDataUseCase.self)!
+                getTestDataUseCase: $0.get()!
             )
         }
     }
