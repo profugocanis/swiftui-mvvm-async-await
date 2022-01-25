@@ -11,12 +11,10 @@ class SecondViewModel: BaseViewModel, ObservableObject {
         self.getTestDataUseCase = getTestDataUseCase
     }
     
+    @MainActor
     func loadTestData() {
         task { [weak self] in
-//            self?.testData = await self?.getTestDataUseCase.invoke()
-            let source = await self?.getTestDataUseCase.invoke()
-            logget(source)
-            self?.testData = source
+            self?.testData = await self?.getTestDataUseCase.invoke()
         }
     }
     

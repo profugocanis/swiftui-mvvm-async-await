@@ -1,7 +1,6 @@
 import Foundation
 import Swinject
 
-@MainActor
 class AppComponent {
     
     static let container = Container()

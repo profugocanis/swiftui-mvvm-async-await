@@ -33,6 +33,7 @@
 		B1516B87278EF75D00887518 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1516B86278EF75D00887518 /* SecondViewModel.swift */; };
 		B1516B89278EF90200887518 /* UINavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1516B88278EF90200887518 /* UINavigationControllerExt.swift */; };
 		B1516B8B278EF95000887518 /* GetTestDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1516B8A278EF95000887518 /* GetTestDataUseCase.swift */; };
+		B16669E8279FFD5900C24B14 /* SequenceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16669E7279FFD5900C24B14 /* SequenceExt.swift */; };
 		B1B84C6927905ABD00A71853 /* SecondScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B84C6827905ABD00A71853 /* SecondScreenRouter.swift */; };
 		B1B84C6E27905F9900A71853 /* ThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B84C6D27905F9900A71853 /* ThirdScreen.swift */; };
 		B1B84C7027905FC200A71853 /* ThirdScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B84C6F27905FC200A71853 /* ThirdScreenRouter.swift */; };
@@ -67,6 +68,7 @@
 		B1516B86278EF75D00887518 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		B1516B88278EF90200887518 /* UINavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExt.swift; sourceTree = "<group>"; };
 		B1516B8A278EF95000887518 /* GetTestDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTestDataUseCase.swift; sourceTree = "<group>"; };
+		B16669E7279FFD5900C24B14 /* SequenceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExt.swift; sourceTree = "<group>"; };
 		B1B84C6827905ABD00A71853 /* SecondScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenRouter.swift; sourceTree = "<group>"; };
 		B1B84C6D27905F9900A71853 /* ThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreen.swift; sourceTree = "<group>"; };
 		B1B84C6F27905FC200A71853 /* ThirdScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreenRouter.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		B1516B59278EEFAC00887518 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				B16669E9279FFD6B00C24B14 /* di */,
 				B1516B78278EF28200887518 /* ui */,
 				B1516B77278EF27700887518 /* network */,
 				B1516B6F278EF1F600887518 /* AppLoger.swift */,
@@ -160,6 +163,7 @@
 				B1516B5F278EF05E00887518 /* UIApplicationExt.swift */,
 				B1516B6B278EF1B500887518 /* AlamofireSessionExt.swift */,
 				B1516B88278EF90200887518 /* UINavigationControllerExt.swift */,
+				B16669E7279FFD5900C24B14 /* SequenceExt.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -185,8 +189,6 @@
 		B1516B65278EF0C800887518 /* di */ = {
 			isa = PBXGroup;
 			children = (
-				B1B84C722790678400A71853 /* dsl */,
-				B1B84C712790677200A71853 /* inject */,
 				B1516B66278EF0DB00887518 /* AppComponent.swift */,
 			);
 			path = di;
@@ -262,6 +264,15 @@
 				B1B84C6827905ABD00A71853 /* SecondScreenRouter.swift */,
 			);
 			path = second;
+			sourceTree = "<group>";
+		};
+		B16669E9279FFD6B00C24B14 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				B1B84C712790677200A71853 /* inject */,
+				B1B84C722790678400A71853 /* dsl */,
+			);
+			path = di;
 			sourceTree = "<group>";
 		};
 		B1B84C6A27905F5E00A71853 /* third */ = {
@@ -423,6 +434,7 @@
 				B1516B4C278EEF2F00887518 /* AppDelegate.swift in Sources */,
 				B1516B6E278EF1E200887518 /* RestManager.swift in Sources */,
 				B12C07DD27917F9C009ECF62 /* Dsl.swift in Sources */,
+				B16669E8279FFD5900C24B14 /* SequenceExt.swift in Sources */,
 				B140CC9B278FFE2D003DC491 /* Inject.swift in Sources */,
 				B1516B8B278EF95000887518 /* GetTestDataUseCase.swift in Sources */,
 				B1516B76278EF26D00887518 /* BaseUseCase.swift in Sources */,

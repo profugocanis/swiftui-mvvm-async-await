@@ -10,6 +10,7 @@ class FirstViewModel: BaseViewModel, ObservableObject {
         self.getAlbumUseCase = getAlbumUseCase
     }
     
+    @MainActor
     func loadAlbums() {
         task { [weak self] in
             self?.albumsResult = await self?.getAlbumUseCase.invoke()
