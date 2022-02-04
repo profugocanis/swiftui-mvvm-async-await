@@ -8,9 +8,12 @@ class GetAlbumUseCase: BaseUseCase {
         self.restManager = restManager
     }
     
-    func invoke() async -> Source<ITunesResult> {
+    func invoke(ids: [Int]) async -> Source<[ITunesResult]> {
         await handle {
-            try await restManager.fetch(url: Endpoints.albums, method: .get)
+            try await ids.parallelMap { [weak self] id in
+                guard let self = self else { throw NSError() }
+                return try await self.restManager.fetch(url: Endpoints.albums)
+            }
         }
     }
 }

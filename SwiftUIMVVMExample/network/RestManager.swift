@@ -13,7 +13,7 @@ class RestManager {
         session = Alamofire.Session(configuration: configuration)
     }
     
-    func fetch<T: Decodable>(url: String, method: HTTPMethod, parameters: Parameters? = nil) async throws -> Source<T> {
+    func fetch<T: Decodable>(url: String, method: HTTPMethod = .get, parameters: Parameters? = nil) async throws -> T {
         let response = try await session.asyncRequest(url,
                              method: method,
                              parameters: parameters,
@@ -22,17 +22,13 @@ class RestManager {
         return try parseResponse(response)
     }
     
-    private func parseResponse<T: Decodable>(_ response: AFDataResponse<Data?>) throws -> Source<T> {
+    private func parseResponse<T: Decodable>(_ response: AFDataResponse<Data?>) throws -> T {
         if let error = response.error { throw error }
-        do {
-            if let data = response.data {
-                AppLoger.d(tag: TAG, String(data: data, encoding: .utf8))
-                let obj = try JSONDecoder().decode(T.self, from: data)
-                return .success(obj)
-            }
-        } catch {
-            return .error(error)
+        if let data = response.data {
+            AppLoger.d(tag: TAG, String(data: data, encoding: .utf8))
+            let obj = try JSONDecoder().decode(T.self, from: data)
+            return obj
         }
-        return .error(nil)
+        throw NSError()
     }
 }
