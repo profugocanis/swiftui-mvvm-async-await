@@ -4,7 +4,6 @@ import SwiftUI
 class InjectViewModel<T: BaseViewModel> {
     
     private var instance: T?
-    private var arguments: (() -> Any?)?
     
     var wrappedValue: T {
         if instance == nil {

@@ -275,6 +275,7 @@
 			children = (
 				B1B84C712790677200A71853 /* inject */,
 				B1B84C722790678400A71853 /* dsl */,
+				B15A0E5F27B2859E007CE62A /* ViewModelSupportProtocol.swift */,
 			);
 			path = di;
 			sourceTree = "<group>";
@@ -295,7 +296,6 @@
 				B140CC9A278FFE2D003DC491 /* Inject.swift */,
 				B140CC9C278FFE8B003DC491 /* InjectLazy.swift */,
 				B1516B80278EF4F600887518 /* InjectViewModel.swift */,
-				B15A0E5F27B2859E007CE62A /* ViewModelSupportProtocol.swift */,
 			);
 			path = inject;
 			sourceTree = "<group>";
