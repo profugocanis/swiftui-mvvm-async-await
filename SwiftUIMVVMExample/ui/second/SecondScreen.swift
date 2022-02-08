@@ -3,7 +3,7 @@ import SwiftUI
 struct SecondScreen: View {
     
     let id: String
-    @InjectViewModel<SecondScreen, SecondViewModel> private var viewModel
+    @InjectViewModel private var viewModel: SecondViewModel
     @State private var text = ""
     
     var body: some View {

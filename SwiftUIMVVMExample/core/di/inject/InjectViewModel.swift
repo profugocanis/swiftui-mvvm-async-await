@@ -1,7 +1,7 @@
 import SwiftUI
 
 @propertyWrapper
-class InjectViewModel<ScopeContent: View, T: BaseViewModel> {
+class InjectViewModel<T: BaseViewModel> {
     
     private var instance: T?
     private var arguments: (() -> Any?)?
@@ -22,13 +22,17 @@ class InjectViewModel<ScopeContent: View, T: BaseViewModel> {
  
 extension InjectViewModel {
     
-    static func setupViewModel(_ vm: BaseViewModel?) {
-        let window = UIApplication.shared.window
-        if var topVC = window?.rootViewController {
+    static func getViewModel<T: BaseViewModel>(_ args: Any?) -> T {
+        let instance = AppComponent.container.resolve(T.self)
+        setupViewModel(instance)
+        return instance!
+    }
+    
+    static private func setupViewModel(_ vm: BaseViewModel?) {
+        if var topVC = UIApplication.shared.window?.rootViewController {
             while let presentedViewController = topVC.presentedViewController {
                 topVC = presentedViewController
             }
-            
             if let nvc = topVC as? UINavigationController {
                 setupVC(vc: nvc.viewControllers.last, vm: vm)
             } else {
@@ -37,18 +41,8 @@ extension InjectViewModel {
         }
     }
     
-    static func setupVC(vc: UIViewController?, vm: BaseViewModel?) {
-        guard let topVC = vc as? BaseViewController<ScopeContent> else {
-            #if DEBUG
-            fatalError("inject - \(T.self) wrong view - \(ScopeContent.self)")
-            #endif
-        }
-        topVC.viewModels.append(vm)
-    }
-    
-    static func getViewModel<T: BaseViewModel>(_ args: Any?) -> T {
-        let instance = AppComponent.container.resolve(T.self)
-        InjectViewModel<ScopeContent, T>.setupViewModel(instance)
-        return instance!
+    static private func setupVC(vc: UIViewController?, vm: BaseViewModel?) {
+        guard let topVC = vc as? ViewModelSupportProtocol else { return }
+        topVC.addViewModel(vm)
     }
 }

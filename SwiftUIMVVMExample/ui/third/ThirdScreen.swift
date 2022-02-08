@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ThirdScreen: View {
     
-    @InjectViewModel<ThirdScreen, ThirdViewModel> private var viewModel
+    @InjectViewModel private var viewModel: ThirdViewModel
     
     var body: some View {
         Text("Third Screen")

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct FirstScreen: View {
     
-    @InjectViewModel<FirstScreen, FirstViewModel> private var viewModel
+    @InjectViewModel private var viewModel: FirstViewModel
     @State private var albums: String = ""
     
     var body: some View {
