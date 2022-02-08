@@ -3,7 +3,7 @@ import Combine
 
 class SecondViewModel: BaseViewModel, ObservableObject {
     
-    @Published private(set) var testData: Source<ITunesResult>!
+    @Published private(set) var testData: Source<ITunesResult>?
     
     private let getTestDataUseCase: GetTestDataUseCase
     
@@ -19,6 +19,6 @@ class SecondViewModel: BaseViewModel, ObservableObject {
     }
     
     deinit {
-        logget("deinit")
+        logget("SecondViewModel deinit")
     }
 }

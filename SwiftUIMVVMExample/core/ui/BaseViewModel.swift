@@ -12,6 +12,7 @@ class BaseViewModel {
     }
     
     func onCanceled() {
+        logget("\(self) onCanceled")
         tasks.forEach { $0.cancel() }
     }
 }

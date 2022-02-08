@@ -33,6 +33,7 @@
 		B1516B87278EF75D00887518 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1516B86278EF75D00887518 /* SecondViewModel.swift */; };
 		B1516B89278EF90200887518 /* UINavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1516B88278EF90200887518 /* UINavigationControllerExt.swift */; };
 		B1516B8B278EF95000887518 /* GetTestDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1516B8A278EF95000887518 /* GetTestDataUseCase.swift */; };
+		B15A0E5E27B269AA007CE62A /* ThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15A0E5D27B269AA007CE62A /* ThirdViewModel.swift */; };
 		B16669E8279FFD5900C24B14 /* SequenceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16669E7279FFD5900C24B14 /* SequenceExt.swift */; };
 		B1B84C6927905ABD00A71853 /* SecondScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B84C6827905ABD00A71853 /* SecondScreenRouter.swift */; };
 		B1B84C6E27905F9900A71853 /* ThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B84C6D27905F9900A71853 /* ThirdScreen.swift */; };
@@ -68,6 +69,7 @@
 		B1516B86278EF75D00887518 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		B1516B88278EF90200887518 /* UINavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExt.swift; sourceTree = "<group>"; };
 		B1516B8A278EF95000887518 /* GetTestDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTestDataUseCase.swift; sourceTree = "<group>"; };
+		B15A0E5D27B269AA007CE62A /* ThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewModel.swift; sourceTree = "<group>"; };
 		B16669E7279FFD5900C24B14 /* SequenceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExt.swift; sourceTree = "<group>"; };
 		B1B84C6827905ABD00A71853 /* SecondScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenRouter.swift; sourceTree = "<group>"; };
 		B1B84C6D27905F9900A71853 /* ThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreen.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				B1B84C6D27905F9900A71853 /* ThirdScreen.swift */,
+				B15A0E5D27B269AA007CE62A /* ThirdViewModel.swift */,
 				B1B84C6F27905FC200A71853 /* ThirdScreenRouter.swift */,
 			);
 			path = third;
@@ -426,6 +429,7 @@
 				B1516B74278EF25B00887518 /* GetAlbumUseCase.swift in Sources */,
 				B1B84C6E27905F9900A71853 /* ThirdScreen.swift in Sources */,
 				B1516B6C278EF1B500887518 /* AlamofireSessionExt.swift in Sources */,
+				B15A0E5E27B269AA007CE62A /* ThirdViewModel.swift in Sources */,
 				B140CC9D278FFE8B003DC491 /* InjectLazy.swift in Sources */,
 				B1516B62278EF07200887518 /* BaseViewModel.swift in Sources */,
 				B1516B4E278EEF2F00887518 /* FirstScreen.swift in Sources */,

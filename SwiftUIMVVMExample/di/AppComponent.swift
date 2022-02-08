@@ -33,5 +33,8 @@ class AppComponent {
                 getTestDataUseCase: $0.get()!
             )
         }
+        factory { _ in 
+            ThirdViewModel()
+        }
     }
 }

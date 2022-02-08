@@ -9,11 +9,13 @@ class InjectViewModel<ScopeContent: View, T: BaseViewModel> {
     var wrappedValue: T {
         if instance == nil {
             instance = AppComponent.container.resolve(T.self)
+            Self.setupViewModel(instance)
         }
         if instance == nil {
+            #if DEBUG
             fatalError("\(T.self) nil state")
+            #endif
         }
-        Self.setupViewModel(instance)
         return instance!
     }
 }
@@ -21,12 +23,27 @@ class InjectViewModel<ScopeContent: View, T: BaseViewModel> {
 extension InjectViewModel {
     
     static func setupViewModel(_ vm: BaseViewModel?) {
-        let navigationVC = UIApplication.shared.window?.rootViewController as? UINavigationController
-        let vc = navigationVC?.viewControllers.first(where: { $0 is BaseViewController<ScopeContent> }) as? BaseViewController<ScopeContent>
-        if vc == nil {
-            fatalError("inject - \(T.self) wrong view - \(ScopeContent.self)")
+        let window = UIApplication.shared.window
+        if var topVC = window?.rootViewController {
+            while let presentedViewController = topVC.presentedViewController {
+                topVC = presentedViewController
+            }
+            
+            if let nvc = topVC as? UINavigationController {
+                setupVC(vc: nvc.viewControllers.last, vm: vm)
+            } else {
+                setupVC(vc: topVC, vm: vm)
+            }
         }
-        vc?.viewModels.append(vm)
+    }
+    
+    static func setupVC(vc: UIViewController?, vm: BaseViewModel?) {
+        guard let topVC = vc as? BaseViewController<ScopeContent> else {
+            #if DEBUG
+            fatalError("inject - \(T.self) wrong view - \(ScopeContent.self)")
+            #endif
+        }
+        topVC.viewModels.append(vm)
     }
     
     static func getViewModel<T: BaseViewModel>(_ args: Any?) -> T {

@@ -16,7 +16,7 @@ struct FirstScreen: View {
     private var content: some View {
         VStack {
             Button {
-                SecondScreenRouter.open(id: "123")
+                SecondScreenRouter.open(id: "a1d8890a")
             } label: {
                 Text("Second Screen")
                     .padding()
@@ -37,7 +37,7 @@ struct FirstScreen: View {
 // MARK: handles
 extension FirstScreen {
     
-    private func handleAlbumsResult(_ source: Source<ITunesResult>?) {
+    private func handleAlbumsResult(_ source: Source<[ITunesResult]>?) {
         switch source {
         case .success(let data):
             albums = "\(String(describing: data))"
