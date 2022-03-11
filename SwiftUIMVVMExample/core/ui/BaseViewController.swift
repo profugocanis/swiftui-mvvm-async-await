@@ -21,6 +21,7 @@ class BaseViewController<Content> : UIHostingController<AnyView>, SupportViewMod
         super.viewDidDisappear(animated)
         if navigationController == nil {
             viewModels.forEach { $0?.onCanceled() }
+            viewModels.removeAll()
         }
     }
 }

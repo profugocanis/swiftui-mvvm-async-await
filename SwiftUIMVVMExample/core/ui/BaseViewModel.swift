@@ -1,7 +1,7 @@
 import Foundation
 
 class BaseViewModel {
-    
+
     private var tasks = [Task<(), Never>]()
     
     func task(_ operation: @escaping () async -> Void) {

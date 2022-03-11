@@ -14,11 +14,12 @@ class RestManager {
     }
     
     func fetch<T: Decodable>(url: String, method: HTTPMethod = .get, parameters: Parameters? = nil) async throws -> T {
-        let response = try await session.asyncRequest(url,
-                             method: method,
-                             parameters: parameters,
-                             encoding: JSONEncoding.default
-                         )
+        let response = try await session.asyncRequest(
+            url,
+            method: method,
+            parameters: parameters,
+            encoding: JSONEncoding.default
+        )
         return try parseResponse(response)
     }
     
