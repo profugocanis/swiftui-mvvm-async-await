@@ -1,6 +1,6 @@
 import Foundation
 
-protocol ViewModelSupportProtocol {
+protocol SupportViewModelProtocol {
     var viewModels: [BaseViewModel?] { get }
     func addViewModel(_ vm: BaseViewModel?)
 }

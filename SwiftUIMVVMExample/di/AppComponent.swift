@@ -1,9 +1,6 @@
 import Foundation
-import Swinject
 
 class AppComponent {
-    
-    static let container = Container()
     
     private init() {}
     

@@ -7,7 +7,7 @@ public class InjectLazy<T> {
 
     public var wrappedValue: T {
             if instance == nil {
-                instance = AppComponent.container.resolve(T.self)
+                instance = appContainer.resolve(T.self)
             }
             return instance!
     }

@@ -34,11 +34,13 @@
 		B1516B89278EF90200887518 /* UINavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1516B88278EF90200887518 /* UINavigationControllerExt.swift */; };
 		B1516B8B278EF95000887518 /* GetTestDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1516B8A278EF95000887518 /* GetTestDataUseCase.swift */; };
 		B15A0E5E27B269AA007CE62A /* ThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15A0E5D27B269AA007CE62A /* ThirdViewModel.swift */; };
-		B15A0E6027B2859E007CE62A /* ViewModelSupportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15A0E5F27B2859E007CE62A /* ViewModelSupportProtocol.swift */; };
+		B15A0E6027B2859E007CE62A /* SupportViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15A0E5F27B2859E007CE62A /* SupportViewModelProtocol.swift */; };
 		B16669E8279FFD5900C24B14 /* SequenceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16669E7279FFD5900C24B14 /* SequenceExt.swift */; };
 		B1B84C6927905ABD00A71853 /* SecondScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B84C6827905ABD00A71853 /* SecondScreenRouter.swift */; };
 		B1B84C6E27905F9900A71853 /* ThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B84C6D27905F9900A71853 /* ThirdScreen.swift */; };
 		B1B84C7027905FC200A71853 /* ThirdScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B84C6F27905FC200A71853 /* ThirdScreenRouter.swift */; };
+		B1CA2C3E27DB6765007231E8 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2C3D27DB6765007231E8 /* AppContainer.swift */; };
+		B1CA2C4327DB714E007231E8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2C4227DB714E007231E8 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,11 +73,14 @@
 		B1516B88278EF90200887518 /* UINavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExt.swift; sourceTree = "<group>"; };
 		B1516B8A278EF95000887518 /* GetTestDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTestDataUseCase.swift; sourceTree = "<group>"; };
 		B15A0E5D27B269AA007CE62A /* ThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewModel.swift; sourceTree = "<group>"; };
-		B15A0E5F27B2859E007CE62A /* ViewModelSupportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSupportProtocol.swift; sourceTree = "<group>"; };
+		B15A0E5F27B2859E007CE62A /* SupportViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewModelProtocol.swift; sourceTree = "<group>"; };
 		B16669E7279FFD5900C24B14 /* SequenceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExt.swift; sourceTree = "<group>"; };
 		B1B84C6827905ABD00A71853 /* SecondScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenRouter.swift; sourceTree = "<group>"; };
 		B1B84C6D27905F9900A71853 /* ThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreen.swift; sourceTree = "<group>"; };
 		B1B84C6F27905FC200A71853 /* ThirdScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreenRouter.swift; sourceTree = "<group>"; };
+		B1CA2C3D27DB6765007231E8 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		B1CA2C4227DB714E007231E8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		B1CA2C4427DB7243007231E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7ACCEE6FB4E4CCC1E4F42C2 /* Pods-SwiftUIMVVMExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIMVVMExample.release.xcconfig"; path = "Target Support Files/Pods-SwiftUIMVVMExample/Pods-SwiftUIMVVMExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +134,7 @@
 		B1516B4A278EEF2F00887518 /* SwiftUIMVVMExample */ = {
 			isa = PBXGroup;
 			children = (
+				B1CA2C4427DB7243007231E8 /* Info.plist */,
 				B1516B59278EEFAC00887518 /* core */,
 				B1516B65278EF0C800887518 /* di */,
 				B1516B5E278EF04E00887518 /* extension */,
@@ -186,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				B1516B4B278EEF2F00887518 /* AppDelegate.swift */,
+				B1CA2C4227DB714E007231E8 /* Launch Screen.storyboard */,
 			);
 			path = system;
 			sourceTree = "<group>";
@@ -275,7 +282,8 @@
 			children = (
 				B1B84C712790677200A71853 /* inject */,
 				B1B84C722790678400A71853 /* dsl */,
-				B15A0E5F27B2859E007CE62A /* ViewModelSupportProtocol.swift */,
+				B15A0E5F27B2859E007CE62A /* SupportViewModelProtocol.swift */,
+				B1CA2C3D27DB6765007231E8 /* AppContainer.swift */,
 			);
 			path = di;
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 			files = (
 				B1516B53278EEF3100887518 /* Preview Assets.xcassets in Resources */,
 				B1516B50278EEF3100887518 /* Assets.xcassets in Resources */,
+				B1CA2C4327DB714E007231E8 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B15A0E6027B2859E007CE62A /* ViewModelSupportProtocol.swift in Sources */,
+				B15A0E6027B2859E007CE62A /* SupportViewModelProtocol.swift in Sources */,
 				B1516B7B278EF32C00887518 /* Album.swift in Sources */,
 				B1516B83278EF71B00887518 /* SecondScreen.swift in Sources */,
 				B1516B7F278EF3D200887518 /* FirstViewModel.swift in Sources */,
@@ -444,6 +453,7 @@
 				B12C07DD27917F9C009ECF62 /* Dsl.swift in Sources */,
 				B16669E8279FFD5900C24B14 /* SequenceExt.swift in Sources */,
 				B140CC9B278FFE2D003DC491 /* Inject.swift in Sources */,
+				B1CA2C3E27DB6765007231E8 /* AppContainer.swift in Sources */,
 				B1516B8B278EF95000887518 /* GetTestDataUseCase.swift in Sources */,
 				B1516B76278EF26D00887518 /* BaseUseCase.swift in Sources */,
 				B1516B7D278EF34800887518 /* Endpoints.swift in Sources */,
@@ -585,9 +595,10 @@
 				DEVELOPMENT_TEAM = TNULAWK25L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIMVVMExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -615,9 +626,10 @@
 				DEVELOPMENT_TEAM = TNULAWK25L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIMVVMExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

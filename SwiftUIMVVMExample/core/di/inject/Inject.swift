@@ -5,7 +5,7 @@ public class Inject<T> {
     public let wrappedValue: T
 
     public init() {
-        let instance: T? = AppComponent.container.resolve(T.self)
+        let instance: T? = appContainer.resolve(T.self)
         if instance == nil {
             fatalError("\(T.self) nil state")
         }
@@ -13,7 +13,7 @@ public class Inject<T> {
     }
     
     static func get<T>() -> T {
-        let instance: T? = AppComponent.container.resolve(T.self)
+        let instance: T? = appContainer.resolve(T.self)
         if instance == nil {
             fatalError("\(T.self) nil state")
         }

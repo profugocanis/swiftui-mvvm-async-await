@@ -7,7 +7,7 @@ class InjectViewModel<T: BaseViewModel> {
     
     var wrappedValue: T {
         if instance == nil {
-            instance = AppComponent.container.resolve(T.self)
+            instance = appContainer.resolve(T.self)
             Self.setupViewModel(instance)
         }
         if instance == nil {
@@ -22,7 +22,7 @@ class InjectViewModel<T: BaseViewModel> {
 extension InjectViewModel {
     
     static func getViewModel<T: BaseViewModel>(_ args: Any?) -> T {
-        let instance = AppComponent.container.resolve(T.self)
+        let instance = appContainer.resolve(T.self)
         setupViewModel(instance)
         return instance!
     }
@@ -41,7 +41,7 @@ extension InjectViewModel {
     }
     
     static private func setupVC(vc: UIViewController?, vm: BaseViewModel?) {
-        guard let topVC = vc as? ViewModelSupportProtocol else { return }
+        guard let topVC = vc as? SupportViewModelProtocol else { return }
         topVC.addViewModel(vm)
     }
 }

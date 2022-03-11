@@ -1,6 +1,6 @@
 import SwiftUI
 
-class BaseViewController<Content> : UIHostingController<AnyView>, ViewModelSupportProtocol where Content : View {
+class BaseViewController<Content> : UIHostingController<AnyView>, SupportViewModelProtocol where Content : View {
     
     internal var viewModels = [BaseViewModel?]()
     
