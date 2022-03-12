@@ -134,7 +134,6 @@
 		B1516B4A278EEF2F00887518 /* SwiftUIMVVMExample */ = {
 			isa = PBXGroup;
 			children = (
-				B1CA2C4427DB7243007231E8 /* Info.plist */,
 				B1516B59278EEFAC00887518 /* core */,
 				B1516B65278EF0C800887518 /* di */,
 				B1516B5E278EF04E00887518 /* extension */,
@@ -192,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				B1516B4B278EEF2F00887518 /* AppDelegate.swift */,
+				B1CA2C4427DB7243007231E8 /* Info.plist */,
 				B1CA2C4227DB714E007231E8 /* Launch Screen.storyboard */,
 			);
 			path = system;

@@ -41,7 +41,8 @@ extension InjectViewModel {
     }
     
     static private func setupVC(vc: UIViewController?, vm: BaseViewModel?) {
-        guard let topVC = vc as? SupportViewModelProtocol else { return }
-        topVC.addViewModel(vm)
+        guard let viewModel = vm else { return }
+        guard let viewController = vc as? SupportViewModelProtocol else { return }
+        viewController.addViewModel(viewModel)
     }
 }
