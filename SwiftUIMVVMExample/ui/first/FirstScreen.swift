@@ -1,5 +1,6 @@
 import SwiftUI
 
+@MainActor
 struct FirstScreen: View {
     
     @InjectViewModel private var viewModel: FirstViewModel
@@ -7,14 +8,13 @@ struct FirstScreen: View {
     
     var body: some View {
         content
-            .onReceive(viewModel.$albumsResult, perform: handleAlbumsResult)
-            .onAppear {
-                viewModel.loadAlbums()
-            }
+            .onReceive(viewModel.$albumsResult, perform: { handleAlbumsResult($0) })
     }
     
     private var content: some View {
         VStack {
+            btLoad
+            
             Button {
                 SecondScreenRouter.open(id: "a1d8890a")
             } label: {
@@ -30,6 +30,18 @@ struct FirstScreen: View {
                 }
                 .padding()
             }
+        }
+    }
+}
+
+extension FirstScreen {
+    
+    private var btLoad: some View {
+        Button {
+            viewModel.loadAlbums()
+        } label: {
+            Text("Load")
+                .padding()
         }
     }
 }

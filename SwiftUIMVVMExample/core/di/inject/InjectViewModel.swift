@@ -11,9 +11,7 @@ class InjectViewModel<T: BaseViewModel> {
             Self.setupViewModel(instance)
         }
         if instance == nil {
-            #if DEBUG
             fatalError("\(T.self) nil state")
-            #endif
         }
         return instance!
     }

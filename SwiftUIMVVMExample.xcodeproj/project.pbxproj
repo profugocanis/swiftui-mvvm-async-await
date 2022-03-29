@@ -595,7 +595,7 @@
 				DEVELOPMENT_TEAM = TNULAWK25L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SwiftUIMVVMExample/Info.plist;
+				INFOPLIST_FILE = SwiftUIMVVMExample/system/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
@@ -626,7 +626,7 @@
 				DEVELOPMENT_TEAM = TNULAWK25L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SwiftUIMVVMExample/Info.plist;
+				INFOPLIST_FILE = SwiftUIMVVMExample/system/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
