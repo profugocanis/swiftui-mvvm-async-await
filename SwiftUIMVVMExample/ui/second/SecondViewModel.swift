@@ -11,7 +11,6 @@ class SecondViewModel: BaseViewModel, ObservableObject {
         self.getTestDataUseCase = getTestDataUseCase
     }
     
-    @MainActor
     func loadTestData() {
         task { [weak self] in
             self?.testData = await self?.getTestDataUseCase.invoke()

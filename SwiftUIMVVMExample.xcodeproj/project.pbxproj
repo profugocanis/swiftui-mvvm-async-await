@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4429F4E21A8EF91BF795E3C9 /* Pods_SwiftUIMVVMExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1955A07C73BCC3047233D06A /* Pods_SwiftUIMVVMExample.framework */; };
+		B1096C0A27F4455000DFA295 /* PublisherExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1096C0927F4455000DFA295 /* PublisherExt.swift */; };
 		B12C07DD27917F9C009ECF62 /* Dsl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12C07DC27917F9C009ECF62 /* Dsl.swift */; };
 		B140CC9B278FFE2D003DC491 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B140CC9A278FFE2D003DC491 /* Inject.swift */; };
 		B140CC9D278FFE8B003DC491 /* InjectLazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B140CC9C278FFE8B003DC491 /* InjectLazy.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		1955A07C73BCC3047233D06A /* Pods_SwiftUIMVVMExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIMVVMExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D8094D6DC78660B662789C /* Pods-SwiftUIMVVMExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIMVVMExample.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUIMVVMExample/Pods-SwiftUIMVVMExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B1096C0927F4455000DFA295 /* PublisherExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExt.swift; sourceTree = "<group>"; };
 		B12C07DC27917F9C009ECF62 /* Dsl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dsl.swift; sourceTree = "<group>"; };
 		B140CC9A278FFE2D003DC491 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		B140CC9C278FFE8B003DC491 /* InjectLazy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectLazy.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				B1516B6B278EF1B500887518 /* AlamofireSessionExt.swift */,
 				B1516B88278EF90200887518 /* UINavigationControllerExt.swift */,
 				B16669E7279FFD5900C24B14 /* SequenceExt.swift */,
+				B1096C0927F4455000DFA295 /* PublisherExt.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				B1516B7D278EF34800887518 /* Endpoints.swift in Sources */,
 				B1516B5B278EEFE000887518 /* BaseViewController.swift in Sources */,
 				B1516B72278EF20A00887518 /* Source.swift in Sources */,
+				B1096C0A27F4455000DFA295 /* PublisherExt.swift in Sources */,
 				B1B84C6927905ABD00A71853 /* SecondScreenRouter.swift in Sources */,
 				B1516B67278EF0DB00887518 /* AppComponent.swift in Sources */,
 			);

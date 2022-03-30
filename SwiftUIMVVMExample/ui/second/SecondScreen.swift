@@ -8,7 +8,7 @@ struct SecondScreen: View {
     
     var body: some View {
         content
-            .onReceive(viewModel.$testData, perform: handleTestData)
+            .onReceive(viewModel.$testData.onMain, perform: handleTestData)
             .onAppear {
                 viewModel.loadTestData()
             }

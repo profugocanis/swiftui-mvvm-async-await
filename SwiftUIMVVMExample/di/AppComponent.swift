@@ -1,6 +1,5 @@
 import Foundation
 
-@MainActor
 class AppComponent {
     
     private init() {}

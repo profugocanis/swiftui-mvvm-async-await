@@ -1,6 +1,5 @@
 import Foundation
 
-@MainActor
 class BaseViewModel {
 
     private var tasks = [Task<(), Never>]()

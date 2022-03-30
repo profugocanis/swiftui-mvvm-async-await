@@ -1,4 +1,5 @@
 import Combine
+import Foundation
 
 class FirstViewModel: BaseViewModel, ObservableObject {
     

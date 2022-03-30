@@ -1,6 +1,5 @@
 import SwiftUI
 
-@MainActor
 struct FirstScreen: View {
     
     @InjectViewModel private var viewModel: FirstViewModel
@@ -8,7 +7,10 @@ struct FirstScreen: View {
     
     var body: some View {
         content
-            .onReceive(viewModel.$albumsResult, perform: { handleAlbumsResult($0) })
+            .onReceive(viewModel.$albumsResult.onMain, perform: handleAlbumsResult)
+            .onAppear {
+                viewModel.loadAlbums()
+            }
     }
     
     private var content: some View {
