@@ -3,9 +3,11 @@ import SwiftUI
 struct ScrollRefreshable<Content: View>: View {
     
     var content: Content
+    @Binding var isRefreshing: Bool
     private var parameters = Parameters()
     
-    init(content: @escaping () -> Content) {
+    init(isRefreshing: Binding<Bool> = .constant(false), content: @escaping () -> Content) {
+        self._isRefreshing = isRefreshing
         self.content = content()
     }
     
@@ -19,6 +21,14 @@ struct ScrollRefreshable<Content: View>: View {
         .listStyle(.plain)
         .refreshable {
             (parameters.onRefresh ?? {})()
+            isRefreshing = true
+            await pause()
+        }
+    }
+    
+    func pause() async {
+        while isRefreshing {
+            try? await Task.sleep(nanoseconds: 1_000_000)
         }
     }
     
