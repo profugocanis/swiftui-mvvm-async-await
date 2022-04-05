@@ -1,9 +1,9 @@
 import Foundation
 import Combine
 
-extension Publisher {
-
-    var onMain: AnyPublisher<Output, Failure> {
-        get { receive(on: RunLoop.main).eraseToAnyPublisher() }
+extension Published.Publisher {
+    
+    var onMain: Publishers.ReceiveOn<Published<Value>.Publisher, RunLoop> {
+        get { receive(on: RunLoop.main) }
     }
 }
