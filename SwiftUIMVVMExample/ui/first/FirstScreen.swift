@@ -3,12 +3,13 @@ import SwiftUI
 struct FirstScreen: View {
     
     @InjectViewModel private var viewModel: FirstViewModel
-    @State private var albums: String = ""
+    @State private var albums: String?
     
     var body: some View {
         content
             .onReceive(viewModel.$albumsResult.onMain, perform: handleAlbumsResult)
             .onAppear {
+                if albums != nil { return }
                 viewModel.loadAlbums()
             }
     }
@@ -24,13 +25,16 @@ struct FirstScreen: View {
                     .padding()
             }
             
-            ScrollView {
+            ScrollRefreshable {
                 LazyVStack {
-                    Text(albums)
+                    Text(albums ?? "")
                     
                     Spacer()
                 }
                 .padding()
+            }
+            .onRefresh {
+                logget("onRefresh")
             }
         }
     }
