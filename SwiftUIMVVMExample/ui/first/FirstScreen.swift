@@ -3,7 +3,7 @@ import SwiftUI
 struct FirstScreen: View {
     
     @InjectViewModel private var viewModel: FirstViewModel
-    @State private var albums: String?
+    @State private var albums: [String]?
     @State private var position = 0
     @State var isRefreshing = false
     
@@ -36,7 +36,19 @@ extension FirstScreen {
     private var list: some View {
         ScrollRefreshable(isRefreshing: $isRefreshing) {
             LazyVStack {
-                Text(albums ?? "")
+                ForEach(albums ?? [], id: \.self) { it in
+                    VStack {
+                        Button {
+                            logget("1")
+                        } label: {
+                            Text(it)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.green)
+                }
                 
                 Spacer()
             }
@@ -72,10 +84,16 @@ extension FirstScreen {
     private func handleAlbumsResult(_ source: Source<[ITunesResult]>?) {
         switch source {
         case .success(let data):
-            albums = "\(String(describing: data))"
+            albums = "\(String(describing: data))".split(separator: ",")
+                .map { it in
+                    String(describing: it)
+                }
+                .filter({ it in
+                    !it.isEmpty
+                })
             isRefreshing = false
         case .error(let error):
-            albums = error?.localizedDescription ?? ""
+            albums = [error?.localizedDescription ?? ""]
             isRefreshing = false
         default:
             break
